@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
+    <style>
+        /* Custom column classes for specific widths */
+        .col-20 {
+            width: 20%;
+        }
+
+        .col-15 {
+            width: 15%;
+        }
+
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #6a11cb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+        }
+    </style>
+
+
+</head>
+
+<body class="gradient-custom">
+
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-20">
+                <section>
+                    <div class="container py-5 px-10 h-50">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+
+                                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                    <p class="text-white-50 mb-5">Please enter your Username and Password!</p>
+
+                                    <form onsubmit="Login();return false;" id="myform" name="myform">
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" style="text-align: left;">Username</label>
+                                            <input type="text" class="form-control" id="username" name="username">
+                                        </div>
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" style="text-align: left;">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password" />
+                                        </div>
+
+
+                                        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div style="display: block;" id="div3" class="col-20">
+                <section>
+                    <div class="container py-5 px-10 h-50">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+
+                                    <h2 class="fw-bold mb-2 text-uppercase" style="font-size: 25px;">GetStudents</h2>
+                                    <p class="text-white-50 mb-5">Click Button For Getting Students.</p>
+
+                                    <form onsubmit="GetStudents();return false;" id="myform2" name="myform2">
+                                        <div class="form-outline form-white mb-4">
+                                            <button class="btn btn-outline-light btn-lg px-5" type="submit">Get</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div style="display: block;" id="div3" class="col-20">
+                <section>
+                    <div class="container py-5 px-10 h-50">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+
+                                    <h2 class="fw-bold mb-2 text-uppercase" style="font-size: 20px;">Get Best Student</h2>
+                                    <p class="text-white-50 mb-5">Click Button For Getting Best Students.</p>
+
+                                    <form onsubmit="GetBestStudent();return false;" id="myform4" name="myform4">
+                                        <div class="form-outline form-white mb-4">
+                                            <button class="btn btn-outline-light btn-lg px-5" type="submit">Get</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+<!-- 
+              <div style="display: block;" id="div2" class="col-20">
+                <section>
+                    <div class="container py-5 px-10 h-50">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+
+                                    <h2 class="fw-bold mb-2 text-uppercase" style="font-size: 25px;">Add Student</h2>
+                                    <p class="text-white-50 mb-5">Please enter your Username,Password,Score</p>
+
+                                    <form onsubmit="AddStudent();return false;" id="myform3" name="myform3">
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" style="text-align: left;">Username</label>
+                                            <input type="text" class="form-control" id="Username" name="Username">
+                                        </div>
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" style="text-align: left;">Password</label>
+                                            <input type="password" class="form-control" id="Password" name="Password" />
+                                        </div>
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label class="form-label" style="text-align: left;">Score</label>
+                                            <input type="number" class="form-control" id="Score" name="Score" />
+                                        </div>
+
+                                        <button class="btn btn-outline-light btn-lg px-5" type="submit">ADD</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div> -->
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script>
+        // var form = document.getElementById("myform");
+        // function handleForm(event) { event.preventDefault(); } 
+        // form.addEventListener('submit', handleForm);
+
+        function Login() {
+            let form = document.forms['myform'];
+            let username = form['username'].value;
+            let password = form['username'].value;
+            SendLoginRequest(username, password);
+
+
+
+        }
+        let token = "";
+        function SendLoginRequest(username, password) {
+            let obj = {
+                username: username,
+                password: password
+            };
+            $.ajax({
+                type: "POST",
+                url: "https://localhost:7016/api/Account/SignIn",   ///// URL must be specified 
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(obj), //this class returns a json object
+                success: function (result) {
+                    token = result;
+                    alert("Logined Successfully");
+                    console.log(token);
+                }
+            }).error((e)=>{
+                console.log('error');
+            });
+        }
+
+
+        function GetStudents(){
+            SendGetStudentRequest();
+        }
+
+        function SendGetStudentRequest(){
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:7016/api/Student",
+                contentType: "application/json; charset=utf-8",
+                headers: { "Authorization": 'basic ' + token },
+                success: function (result) {
+                    cities = result;
+                        alert(JSON.stringify(result));
+                        console.log(JSON.stringify(result));
+                },
+                error: function (ex) {
+                    alert(ex.responseText);
+                }
+            });
+        }
+
+
+        function GetBestStudent(){
+            SendBestStudent();
+        }
+
+        function SendBestStudent(){
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:7016/api/Student/Best",
+                contentType: "application/json; charset=utf-8",
+                headers: { "Authorization": 'basic ' + token },
+                success: function (result) {
+                        alert(JSON.stringify(result));
+                        console.log(JSON.stringify(result));
+                },
+                error: function (ex) {
+                    alert(ex.responseText);
+                }
+            });
+        }
+
+        // function AddStudent() {
+        //     let form = document.forms['myform3'];
+        //     let Username = form['Username'].value;
+        //     let Password = form['Password'].value;
+        //     let Score = form['Score'].value;
+        //     SendAddStudentRequest(Username, Password, Score);
+        // }
+
+        // function SendAddStudentRequest(username, password, score) {
+            
+        //     var newData = {};
+        //     newData.Username = description;
+        //     newData.Password = namecity;
+        //     newData.Score = userid;
+
+        //     var jsonData = JSON.stringify(newData);
+
+        //     $.ajax({
+        //             type: "POST",
+        //             url: "https://localhost:7016/api/Student",
+        //             data: jsonData,
+        //             dataType:"json",
+        //             contentType: "application/json; charset=utf-8",
+        //             headers: { "Authorization": 'basic ' + token },
+        //             success: function (result) {
+        //                 alert("Added Successfully : " + JSON.stringify(result));
+        //                 console.log(JSON.stringify(result));
+        //             },
+        //             error: function (ex) {
+        //                 alert(ex.responseText);
+        //             }
+        //         });
+
+            
+        // }
+
+
+    </script>
+</body>
+
+</html>
